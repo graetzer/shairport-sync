@@ -54,6 +54,9 @@ extern audio_output audio_pipe;
 #ifdef CONFIG_STDOUT
 extern audio_output audio_stdout;
 #endif
+#ifdef CONFIG_ATBOX
+extern audio_output audio_atbox;
+#endif
 
 static audio_output *outputs[] = {
 #ifdef CONFIG_ALSA

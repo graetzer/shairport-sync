@@ -256,6 +256,13 @@ AC_ARG_WITH(pa, [  --with-pa = choose PulseAudio support.], [
   fi ])
 AM_CONDITIONAL([USE_PA], [test "x$HAS_PA" = "x1"])
 
+# Look for AudioToolbox flag
+AC_ARG_WITH(atbox, [  --with-atbox = choose AudioToolbox support.], [
+  AC_MSG_RESULT(>>Including a AudioToolbox back end.)
+  HAS_ATBOX=1
+  AC_DEFINE([CONFIG_ATBOX], 1, [Needed by the compiler.])
+AM_CONDITIONAL([USE_ATBOX], [test "x$HAS_ATBOX" = "x1"])
+
 # Look for Convolution flag
 AC_ARG_WITH(convolution, [  --with-convolution = choose audio DSP convolution support], [
   AC_MSG_RESULT(>>Including convolution support)

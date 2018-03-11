@@ -66,6 +66,13 @@ if USE_PA
 shairport_sync_SOURCES += audio_pa.c
 endif
 
+if USE_ATBOX
+shairport_sync_SOURCES += audio_atbox.mm
+# Add the required frameworks
+AM_CXXFLAGS = -ObjC++ -framework AudioToolbox.framework -F /Library/Frameworks
+AM_LDFLAGS = -framework AudioToolbox.framework -F /Library/Frameworks
+endif
+
 if USE_CONVOLUTION
 shairport_sync_SOURCES += FFTConvolver/AudioFFT.cpp FFTConvolver/FFTConvolver.cpp FFTConvolver/Utilities.cpp FFTConvolver/convolver.cpp
 AM_CXXFLAGS = -std=c++11
